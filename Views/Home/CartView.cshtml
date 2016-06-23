@@ -1,0 +1,15 @@
+﻿@model List<WebApp.Models.Cart>
+@{
+    ViewBag.Title = "CartView";
+}
+
+<h2>Items In Cart</h2>
+
+<h2>@Session["username"]</h2>
+@foreach (var c in Model)
+{
+    <p>Prodct ID : @c.productId</p>
+    <p>Product Price: @c.price</p>
+}
+
+<h2>Net Total: @Session["price"]</h2>

@@ -1,0 +1,58 @@
+﻿@model WebApp.Models.WebClient
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Web Client</legend>
+    <div>
+
+       ID:  @Model.Id
+    </div>
+    <div>
+
+        FirstName:  @Model.firstname
+    </div>
+
+    <div>
+        LastName : @Model.lastname
+    </div>
+
+
+    <div>
+        User Name : @Model.username
+    </div>
+
+    <div>
+        User Name : @Model.email
+    </div>
+
+    <div>
+        User Name : @Model.password
+    </div>
+
+    <div>
+        User Name : @Model.secretquestion
+    </div>
+
+    <div>
+        User Name : @Model.secretanswer
+    </div>
+    <div>
+        User Name : @Model.age
+    </div>
+    <div>
+
+        Profile Photo:  @Model.profilephoto
+    </div>
+
+    
+
+</fieldset>
+    <a href="~/Admin/DeleteConfirmed/@Model.Id">Yes</a> 
+    @Html.ActionLink("Back to List", "Index")
+    
+

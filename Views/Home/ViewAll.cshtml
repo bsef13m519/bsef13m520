@@ -1,0 +1,30 @@
+﻿@model List<WebApp.Models.User>
+@{
+    ViewBag.Title = "ViewAll";
+}
+
+<h2>ViewAll</h2>
+
+<table>
+
+    <tr>
+        <th> ID </th>
+        <th> NAME </th>
+        <th> PASSWORD </th>
+        <th> DELETE</th>
+     </tr>
+    @{ 
+        foreach(var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.name</td>
+                <td>@x.password</td>
+                <td><a href="~/Home/delete/@x.Id">delete </a></td>
+                
+            </tr>
+        }
+    }
+
+    </table>
+

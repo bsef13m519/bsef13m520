@@ -1,0 +1,15 @@
+﻿@model WebApp.Models.User
+@{
+    ViewBag.Title = "delete";
+}
+
+<h2>delete</h2>
+
+<p> do you really want to delete the user
+    ID: @Model.Id
+    NAME: @Model.name
+    PASSWORD: @Model.password
+</p>
+
+<input type="button" value="YES">
+<input type="button" value="NO">

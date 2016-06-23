@@ -1,0 +1,106 @@
+﻿@model WebApp.Models.WebClient
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <fieldset>
+        <legend>Student</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.firstname)
+          
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.firstname)
+            @Html.ValidationMessageFor(model => model.firstname)
+        </div>
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastname)
+         
+        </div>
+       
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.lastname)
+            @Html.ValidationMessageFor(model => model.lastname)
+
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.username)
+          
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.username)
+            @Html.ValidationMessageFor(model => model.username)
+
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.secretquestion)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.secretquestion)
+            @Html.ValidationMessageFor(model => model.secretquestion)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.secretanswer)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.secretanswer)
+            @Html.ValidationMessageFor(model => model.secretanswer)
+
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.age)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.age)
+            @Html.ValidationMessageFor(model => model.age)
+
+        </div>
+
+        
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.profilephoto)
+            @Html.ValidationMessageFor(model => model.profilephoto)
+
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

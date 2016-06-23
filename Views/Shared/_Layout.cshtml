@@ -1,0 +1,103 @@
+﻿@using WebApp.Models;
+@{WebApp.Models.WebClient u = (WebApp.Models.WebClient)Session["user"];}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title ONLINE SHOPPING STORE</title>
+    <link rel="stylesheet" href="~/css/StyleSheet1.css" type="text/css">
+   
+    
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="~/Home/HomePage" id="logo"><img src="/images/logo.png" alt="logo"></a>
+            <ul>
+                <li >
+                    <a href="~/Home/HomePage">Home</a>
+                </li>
+                <li>
+                    <a href="~/Home/about">About</a>
+                </li>
+                <li>
+                    <a href="~/Home/collections">Collections</a>
+                    <ul>
+                        <li>
+                            <a href="~/Home/collections">Clothing</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/shoes">Shoes</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/bags">Bags</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/accessories">Watches</a>
+                        </li>
+                    </ul>
+                </li>
+
+                @{
+                    if (u == null)
+                    {
+                        <li><a href="~/Account/Login"><i class="fa fa-lock"></i> Login</a></li>
+                                        <li><a href="~/Account/SignUp"><i class="fa fa-lock"></i>SignUp</a></li>
+                    }
+                    else
+                    {
+                        <li class="fa fa-user">@Html.ActionLink(@u.username, "Info", "Account")</li>
+
+                                        <li><a href="~/Account/logOut"> Logout</a></li>
+                    }
+                   
+                }
+               <li>
+                   <a href="~/Home/CartView/">View Cart</a>
+               </li>
+
+               
+     
+
+            </ul>
+        </div>
+        
+    </div>
+    
+    <div class="container body-content">
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+        <hr />
+        <footer>
+            <div class="footer">
+                <div>
+                    <p>
+                        &#169; ONLINE SHOPPING STORE
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li> 
+                        <li>
+                            <a href="#">Terms And Conditons</a>
+                        </li>
+                        <li>
+                            <p>&copy; @DateTime.Now.Year - MINI SITES</p>
+                        </li>
+                    </ul>
+                    <div class="connect">
+                        <a href="http://freewebsitetemplates.com/go/twitter/" id="twitter">Twitter</a> <a href="http://freewebsitetemplates.com/go/facebook/" id="facebook">Facebook</a> <a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">Google+</a>
+                        
+                     </div>
+                </div>
+                </div>
+              
+    </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/JavaScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model WebApp.Models.WebClient
+
+
+
+<section id="form">
+    <!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="col-sm-1">
+                    <h2 class="or">User Profile</h2>
+                    <div class="col-sm-1">
+                        <div class="login-form">
+
+                            @using (Html.BeginForm("changeUserInfo", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.Label("Change Profile Photo")
+                                <br>
+
+                                <img src="~/Files/@Model.profilephoto" alt="image not available">
+
+                                @Html.TextBoxFor(model => model.profilephoto, new { type = "file" })
+                                @Html.ValidationMessageFor(model => model.profilephoto)
+
+                                @Html.HiddenFor(model => model.Id , new { @placeholder = " ID " })
+                                @Html.Label("First Name")
+                                @Html.TextBoxFor(model => model.firstname , new { @placeholder = " First Name" })
+                                @Html.ValidationMessageFor(model => model.firstname)
+                                @Html.Label("Last Name")
+                                @Html.TextBoxFor(model => model.lastname , new { @placeholder = " Last Name" })
+                                @Html.ValidationMessageFor(model => model.lastname)
+                                @Html.Label("User Name")
+                                @Html.TextBoxFor(model => model.username , new { @placeholder = " User Name" })
+                                @Html.ValidationMessageFor(model => model.username)
+                                @Html.Label("Email")
+                                @Html.TextBoxFor(model => model.email, new { @placeholder = " Email" })
+                                @Html.ValidationMessageFor(model => model.email)
+                                @Html.Label("Secret Question")
+                                @Html.TextBoxFor(model => model.secretquestion, new { @placeholder = " Secret Answer" })
+                                @Html.ValidationMessageFor(model => model.secretquestion)
+                                @Html.Label("Secret Answer")
+                                @Html.TextBoxFor(model => model.secretanswer, new { @placeholder = " Secret Answer" })
+                                @Html.ValidationMessageFor(model => model.secretanswer)
+                               
+                                @Html.Label("Age")
+                                @Html.TextBoxFor(model => model.age, new { @placeholder = " Age" })
+                                @Html.ValidationMessageFor(model => model.age)
+                                @Html.Label("Password")
+                                @Html.TextBoxFor(model => model.password, new { @placeholder = " Enter New Password" })
+                                @Html.ValidationMessageFor(model => model.password)
+                                <button type="submit" class="btn btn-default" id="log">Submit</button>
+                                <a href="~/Home/HomePage" class="btn-default">Home Page</a>
+                            }
+
+
+                        </div><!--/login form-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/form-->

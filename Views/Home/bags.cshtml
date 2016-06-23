@@ -1,0 +1,73 @@
+﻿
+@model List<WebApp.Models.Product>
+
+
+<body>
+
+    <div class="body">
+        <div class="collections">
+            <div class="navigation">
+                <ul>
+                    <li class="selected">
+                        <a href="#">Summer 2016</a>
+                    </li>
+                    <li>
+                        <a href="#">Spring 2016</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#">Winter 2016</a>
+                    </li>
+                    <li>
+                        <a href="#">Autumn 2016</a>
+                    </li>
+                    <li>
+                        <a href="#">Search Here</a>
+                    </li>
+                    <li>
+
+                        <select id="searchtype" style="margin-top:1em" , onchange="getval(this);">
+
+
+                            <option value="Brand">Brand</option>
+
+                            <option value="Price">Price</option>
+
+                        </select>
+
+                        <select id="search-box-input">
+                            <option value="0">Select</option>
+
+                        </select>
+
+
+                    </li>
+                    <li id="check">
+                        checking
+                    </li>
+
+                </ul>
+            </div>
+            <div>
+                <h2>Summer 2023 Collection</h2>
+                <ul>
+                    @foreach (var p in Model)
+                    {
+                        if (p.Category == "bags")
+                        {
+                            <li>
+                                <a href="#"><img src="~/images/@p.ImagePath" alt=""></a>
+                                <a href="~/Home/saveCart/@p.Code"> Add TO CART </a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+
+                <h2 id="searchresult">Search Result</h2>
+                <ul id="items"></ul>
+            </div>
+        </div>
+    </div>
+
+</body>
